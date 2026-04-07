@@ -5,17 +5,17 @@ on:
     branches: [ "main" ]
 
 env:
-  AWS_REGION: us-east-1                 # ✅ change if needed
-  ECR_REPOSITORY: my-app-repo          # ✅ your ECR repo name
-  ECS_SERVICE: my-ecs-service          # ✅ your ECS service name
-  ECS_CLUSTER: my-ecs-cluster          # ✅ your ECS cluster name
-  ECS_TASK_DEFINITION: task-definition.json  # ✅ file in your repo
-  CONTAINER_NAME: my-container         # ✅ container name inside task def
+  AWS_REGION: us-east-1
+  ECR_REPOSITORY: student-performance
+  ECS_SERVICE: student-performance-service
+  ECS_CLUSTER: student-performance-cluster
+  ECS_TASK_DEFINITION: task-definition.json
+  CONTAINER_NAME: my-container
 
 jobs:
   deploy:
     name: Deploy to ECS
-    runs-on: self-hosted  # ✅ IMPORTANT (use your EC2 runner)
+    runs-on: [self-hosted, student-performance]
 
     steps:
       - name: Checkout code
