@@ -15,7 +15,7 @@ env:
 jobs:
   deploy:
     name: Deploy to ECS
-    runs-on: [self-hosted, student-performance]
+    runs-on: self-hosted
 
     steps:
       - name: Checkout code
